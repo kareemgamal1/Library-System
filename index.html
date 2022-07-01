@@ -25,41 +25,55 @@
     </div>
 
     <div class="container input-container justify-content-center align-items-center">
-      <form class="input-book d-flex flex-column w-25" action="">
-        <label for="inputAuthor">Author</label>
-        <input type="text" id="inputAuthor">
-        <label for="inputTitle">Title</label>
-        <input type="text" id="inputTitle">
-        <label for="InputNoOfPages">Number of Pages</label>
-        <input type="number" id="InputNoOfPages">
-        <label>Read<input type="checkbox" name="read" id="inputStatus" class="ms-1"></label>
-        <div class="button text-center mt-1">
-          <button type="submit" class="main-btn add">Add book</button>
-          <button type="submit" class="main-btn cancel">Cancel</button>
-        </div>
-      </form>
+      <form name="input-book" class="input-book d-flex flex-column w-25"
+        action="javascript:void(0);">
+        <label for="input-author">Author</label>
+        <input required minlength="5" maxlength="25" type="text" class="input-author">
+        <label for="input-title">Title</label>
+        <input required minlength="5" maxlength="45" type="text" class="input-title">
+        <label for="input-noOfPages">Number of Pages</label>
+        <input required min="1" max="50000" type="number" class="input-noOfPages">
+        <label class="switch input-switch">
+          <input type="checkbox" class="input-status mt-4">
+          <span class="slider round"></span>
+        </label>
+        <input type="submit" class="main-btn add" value="Add book"></button>
+        <button class="main-btn cancel">Cancel</button>
     </div>
+    </form>
+    </div>
+
     <div class="container books">
       <div class="row gap">
-        <div class="col-sm-6 col-md-4 col-lg-3 book-holder mb-5">
-          <div class="book" style="width: fit-content;padding: 5% 7%;">
-            <div class="book-body">
-              <h5 class="book-title">The Happiness Trap</h5>
-              <h5 class="book-author">By Russ Harris.</h5>
-              <h5 class="book-noOfPages">176 pages.</h5>
-              <input class="book-status d-none" type="checkbox" name="d-none">
-              <button href="#" class="main-btn">Finished</button>
-              <button href="#" class="main-btn">Delete</button>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 book-holder" id="1">
+          <div class="book" id="1">
+            <h5 class="book-title">The Happiness Trap</h5>
+            <h5 class="book-author">By Russ Harris.</h5>
+            <h5 class="book-noOfPages">176 pages.</h5>
+            <div class="book-buttons d-flex justify-content-between">
+              <label class="switch">
+                <input type="checkbox" class="book-status mt-4" id="1">
+                <span class="slider round"></span>
+              </label>
+              <button class="main-btn delete cancel" id="1">Delete</button>
             </div>
           </div>
         </div>
-
-
-
       </div>
-    </div>
 
-    <script src="js/script.js"></script>
+    </div>
+    </div>
+    <footer class="footer">
+      <p>
+        Copyright ©
+        <script>
+          document.write(new Date().getFullYear())
+        </script>
+        kareemgamaal
+        <a href="https://github.com/kareemgamal1" target="_blank"><i class="fab fa-github"></i></a>
+      </p>
+    </footer>
+    <script src=" js/script.js"></script>
   </body>
 
 </html>
